@@ -1,0 +1,16 @@
+.menu .menu_item {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.menu .menu_item:hover  {
+   background-color: #353b45;
+   cursor: pointer;
+}
+.menu .menu_item .menu_item-sub .menu_item-sub-item:hover {
+    background-color: #353b45;
+}
+.menu .menu_item .menu_item-sub .menu_item-sub-item {
+    padding: 10px;
+    margin-top: 10px;
+}
