@@ -4,7 +4,7 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import DescriptionIcon from "@mui/icons-material/Description";
 import LayersIcon from "@mui/icons-material/Layers";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "../../../css/admin/common/side-bar.css";
 
 function Menu() {
@@ -60,7 +60,7 @@ function Menu() {
         const getClickedSegment = MenuItems.filter(
             (item) => item.segment == segment
         );
-        
+
         const isHasChildren =
             getClickedSegment[0] && getClickedSegment[0].children
                 ? true
@@ -73,7 +73,7 @@ function Menu() {
             }
         }
         if (getClickedSegment[0]) {
-            getClickedSegment[0].isActive = true
+            getClickedSegment[0].isActive = true;
             setClickSubMenu(getClickedSegment[0].segment);
         }
     };
@@ -144,15 +144,17 @@ function Menu() {
         </ul>
     );
 }
-function SideBar(isOpenSideBar, setOpenSideBar) {
+function SideBar({ isOpenSideBar, setOpenSideBar }) {
     return (
         <div className="w-[15%] bg-black h-screen">
             <div className="h-[50px] text-white flex items-center justify-center uppercase text-3xl font-bold border-b-[0.5px] border-solid border-white">
                 Social
             </div>
-            <div>
-                <Menu />
-            </div>
+            {isOpenSideBar && (
+                <div className="w-full">
+                    <Menu />
+                </div>
+            )}
         </div>
     );
 }
